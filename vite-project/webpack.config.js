@@ -7,7 +7,7 @@ const {CleanWebpackPlugin} =require("clean-webpack-plugin");
 
 module.exports = {
     
-    entry: './index.js',
+    entry: './js/index.js',
     output: {
       path: path.resolve(__dirname, '/build/js'),
       filename: 'bundle.[chunkhash].js',
@@ -20,7 +20,7 @@ module.exports = {
 
     plugins: [
         new HtmlPlugin({
-            template: "/index.html",
+            template: "index.html",
         }),
     
         new CleanWebpackPlugin()

@@ -1,5 +1,5 @@
-import App from "./js/app.js"
-import{dataMenuLink} from "./data.js"
+import App from "../component/app.js"
+import{dataMenuLink} from "../component/data.js"
 import './style.css';
 
 function Render({root, app}){

@@ -1,6 +1,6 @@
 import './style.css';
-import { menujs } from './public/component/menu/menu.js';
-import{dataMenuLink} from "./data.js"
+import { menujs } from './component/menu/menu.js';
+import{dataMenuLink} from "./component/data.js"
 import { setupCounter } from './counter.js';
 
 document.querySelector('#app').innerHTML = `
