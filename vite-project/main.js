@@ -25,7 +25,7 @@ document.querySelector('#app').innerHTML = `
 </div>
 `;
 
-setupCounter(document.getElementById('home'));
+setupCounter(document.querySelector('#home'));
 
 // import './style.css';
 // import javascriptLogo from './javascript.svg';
