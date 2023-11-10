@@ -29,7 +29,21 @@ module.exports = {
     module: {
         rules: [{
             test: /\.css$/i,
-            use:["style-loader", "css-loader"],}
-        ]
+            use:["style-loader", "css-loader"],
+        },
+        {
+            test: /\.(png|jpg?g|gif)$/i,
+            use: [
+                {
+                    loader:"file-loader"
+                },
+            ],
+        },
+        {
+            test: /\.svg$/,
+            loader: 'svg-inline-loader'
+        }
+        ],
+
     }
   }
