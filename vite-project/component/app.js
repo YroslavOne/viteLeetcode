@@ -1,10 +1,10 @@
-import { menujs } from './public/component/menu/menu.js';
+// import { menujs } from './public/component/menu/menu.js';
 // import { setupCounter } from './counter.js';
 
-function App(dataMenuLink){
+function App(){
     return (
         `<div id="basket_open" class=""></div>
-        <div class="menu_display_flex" id="menu">${menujs(dataMenuLink)}
+        <div class="menu_display_flex" id="menu">
     </div>
     <div class="main_block">
     

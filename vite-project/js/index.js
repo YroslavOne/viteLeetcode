@@ -1,6 +1,6 @@
 import App from "../component/app.js"
-import{dataMenuLink} from "../component/data.js"
-import './style.css';
+// import{dataMenuLink} from "../component/data.js"
+import '../style.css';
 
 function Render({root, app}){
     this.render = ()=>{
@@ -10,7 +10,7 @@ function Render({root, app}){
 
 const root = new Render({
     root: "#app",
-    app: App(dataMenuLink)
+    app: App()
 })
 
 root.render();

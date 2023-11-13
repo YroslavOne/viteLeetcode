@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const HTMLPrugin = require("html-webpack-plugin");
+const HTMLPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} =require("clean-webpack-plugin");
 
 
@@ -13,13 +13,13 @@ module.exports = {
       filename: 'bundle.[chunkhash].js',
     },
 
-    devtool: "sourse-map",
+    devtool:  'source-map',
     devServer: {
         port: 3001
     },
 
     plugins: [
-        new HtmlPlugin({
+        new HTMLPlugin({
             template: "index.html",
         }),
     

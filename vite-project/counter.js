@@ -5,4 +5,4 @@ export function setupCounter(element) {
   }
   element.addEventListener('click', () => console.log("hi men"))
   setCounter(0)
-}
+} 
