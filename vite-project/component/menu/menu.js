@@ -1,11 +1,9 @@
 // import { variableCard } from '../../variabel.js';
 // import { setupCounter } from '../../counter.js';
-import menuLink from "./menuLink.js"
+import menuLink from './menuLink.js';
 
 export function menujs(data) {
- 
-  
-    let elHtml = `
+  let elHtml = `
       <div class="menu_block">
       <div class="menu width_30">
         <ul >
@@ -23,8 +21,7 @@ export function menujs(data) {
       </span>
       </div>
       </div>`;
-    return elHtml;
-  }
-  // export let menujs = 'hi';
+  return elHtml;
+}
+// export let menujs = 'hi';
 //   setupCounter(document.getElementById('home'));
-  
