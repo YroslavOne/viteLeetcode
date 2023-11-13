@@ -13,10 +13,11 @@ export function menujs(data) {
       <div class="width_30 logo_menu">
       <img src="" alt="">
       </div>
-      <div class="width_30 basket" onclick="basketOpen()">
+      <div class="width_30 basket">
       <button class="basket_fixed"><i class="bi bi-cart4" style="color: black"></i></button>
       <span class="basket_summ_items" >
-      <div id="counter">variableCard.quantityElemCard</div>
+      <div id="basket_summ_items">0</div>
+
       </span>
       </div>
       </div>`;

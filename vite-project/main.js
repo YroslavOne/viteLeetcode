@@ -1,7 +1,7 @@
 import './style.css';
 import { menujs } from './component/menu/menu.js';
 import{dataMenuLink} from "./component/data.js"
-import { setupCounter } from './counter.js';
+// import { setupCounter } from './counter.js';
 
 document.querySelector('#app').innerHTML = `
   <div id="basket_open" class=""></div>

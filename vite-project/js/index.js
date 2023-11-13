@@ -1,6 +1,9 @@
 import App from "../component/app.js"
 // import{dataMenuLink} from "../component/data.js"
-import '../style.css';
+import '../style/style.css';
+import {cheking} from "../counter.js"
+// import 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css';
+
 
 function Render({root, app}){
     this.render = ()=>{
@@ -14,3 +17,5 @@ const root = new Render({
 })
 
 root.render();
+
+setupCounter(document.getElementById('app'));
