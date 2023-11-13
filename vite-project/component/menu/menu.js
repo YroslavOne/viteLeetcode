@@ -1,8 +1,10 @@
 // import { variableCard } from '../../variabel.js';
 // import { setupCounter } from '../../counter.js';
-import {menuLink} from "./menuLink.js"
+import menuLink from "./menuLink.js"
 
 export function menujs(data) {
+ 
+  
     let elHtml = `
       <div class="menu_block">
       <div class="menu width_30">

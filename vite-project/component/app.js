@@ -4,6 +4,8 @@ import {cheking} from "./addEventListener.js"
 // import { setupCounter } from './counter.js';
 
 function App(){
+    
+    
     return (
         `<div id="basket_open" class=""></div>
         <div class="menu_display_flex" id="menu">${menujs(dataMenuLink)}
