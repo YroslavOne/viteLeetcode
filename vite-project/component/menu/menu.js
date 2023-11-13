@@ -6,7 +6,7 @@ export function menujs(data) {
   let elHtml = `
       <div class="menu_block">
       <div class="menu width_30">
-        <ul >
+        <ul>
         ${menuLink(data)}
         </ul>
       </div>
