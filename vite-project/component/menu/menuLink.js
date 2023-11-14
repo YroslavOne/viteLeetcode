@@ -1,6 +1,6 @@
 // import { variableCard } from '../../variabel.js';
 // import { setupCounter } from '../../counter.js';
-function menuLink(dataMenuLink) {
+function menuLink(elemHtml, dataMenuLink) {
   dataMenuLink.forEach((element) => {
     // elHtml += `<li><a id="${element.title}" class="blackColorClass" >${element.title}</a></li>`
 
@@ -11,9 +11,12 @@ function menuLink(dataMenuLink) {
     const $contentElemA = document.createTextNode(element.title);
     $elemA.appendChild($contentElemA);
     $elemLi.append($elemA);
+    elemHtml.append($elemLi);
 
-    const currentDiv = document.querySelector('#menu');
-    currentDiv.append($elemLi);
+    document
+    .getElementById(element.title)
+    .addEventListener('click', () => console.log(element.title));
+
     // document.body.insertBefore($elemLi, currentDiv);
   });
   //   let elHtml = ""

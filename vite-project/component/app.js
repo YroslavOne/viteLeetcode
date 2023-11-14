@@ -1,4 +1,4 @@
-import { menujs } from './menu/menu.js';
+import menujs from './menu/menu.js';
 import { dataMenuLink } from './data.js';
 import { cheking } from './addEventListener.js';
 import mainBlock from './mainBlock/mainBlock.js';
@@ -9,23 +9,8 @@ function App() {
   const $cardOpen = document.createElement('div');
   $cardOpen.id = 'basket_open';
   document.body.insertBefore($cardOpen, $app);
-  const $menu = document.createElement('div');
-  $menu.className = 'menu_display_flex';
-  $menu.id = 'menu';
-  document.body.insertBefore($menu, $app);
+  menujs($app, dataMenuLink)
   mainBlock($app);
-
-  // <div id="basket_open" class=""></div>
-  //   <div class="menu_display_flex" id="menu">${menujs(dataMenuLink)}
-  // </div>
-  // <div class="main_block">
-
-  // <div class="text_main_block">
-  // <h1 class="main_block_h1">Rest, Relax, Unwind</h1>
-  // <h2>Embrace your choices - we do</h2>
-  // <button id="main_block_button" class="main_block_button" onclick ={}>show now</button>
-  // </div>
-  // </div>
 
   // <div class="main_catalog_block">
   //   <h3 class="featured">/ Featured</h3>
