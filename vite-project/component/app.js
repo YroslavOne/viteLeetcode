@@ -14,18 +14,33 @@ function App() {
   menujs($app, dataMenuLink)
   mainBlock($app);
   const objFilter = {
-    filter: 1,
-    folterishe: 2,
+    featured: true,
   }
   localStorage.clear();
   chekingis(objFilter);
 
-  // <div class="main_catalog_block">
-  //   <h3 class="featured">/ Featured</h3>
-  // <div class="catalog_block" id="catalog_block">
-  // </div ><a href="./products.html" class="linksProducts">
-  // <button class="catalog_block_button" >all products</button></a>
+  const $divMainCatalogBlock = document.createElement("div");
+  $divMainCatalogBlock.className = "main_catalog_block";
+  $app.append($divMainCatalogBlock);
+  const $h3Featured = document.createElement('h3');
+  $h3Featured.className = "featured";
+  $h3Featured.textContent = "Featured";
+  $divMainCatalogBlock.append($h3Featured);
+  const $divCatalogBlock = document.createElement("div");
+  $divCatalogBlock.className = "catalog_block";
+  $divCatalogBlock.id = "catalog_block"
+  $divMainCatalogBlock.append($divCatalogBlock);
+  const $aLinkProduct = document.createElement('a');
+  $aLinkProduct.className = "linksProducts"
+  $aLinkProduct.id = "products"
+  $divMainCatalogBlock.append($aLinkProduct);
+  const $buttonCatalogBlock = document.createElement('button');
+  $buttonCatalogBlock.className = 'catalog_block_button';
+  $buttonCatalogBlock.textContent = 'all products';
+  $aLinkProduct.append($buttonCatalogBlock);
 
-  // </div>
+  
+
+  
 }
 export default App;
