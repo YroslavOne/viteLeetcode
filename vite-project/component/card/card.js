@@ -1,9 +1,12 @@
 import cardProduct from './cardProduct';
+import { cardClose } from "../addEventListener.js";
 
 function card(elemHtml) {
-  const $busketOpen = document.createElement('div');
-  $busketOpen.id = 'basket_open';
-  elemHtml.append($busketOpen);
+//   const $busketOpen = document.createElement('div');
+//   $busketOpen.id = 'basket_open';
+//   elemHtml.append($busketOpen);
+  const $busketOpen = document.getElementById("basket_open")
+
 
   const $blockBasket = document.createElement('div');
   $blockBasket.className = 'block_basket';
@@ -29,7 +32,7 @@ function card(elemHtml) {
   const $elemBlockBasketProduct = document.getElementById(
     'block_basket_product'
   );
-  $blockBasketProduct.append(cardProduct());
+  cardProduct($elemBlockBasketProduct);
 
   const $divPraiseBasket = document.createElement('div');
   $divPraiseBasket.className = 'div_prise_basket';
@@ -44,10 +47,9 @@ function card(elemHtml) {
   $buttonBasketChekout.textContent = 'checkout';
   $basketBlockMain.append($buttonBasketChekout);
 
+
   const $clickElemCloseBasket = document.getElementById('toDoBasketClose');
-  $clickElemCloseBasket.addEventListener('click', () => {
-    console.log('closeBasket');
-  });
+  cardClose($clickElemCloseBasket)
 }
 
 export default card;
