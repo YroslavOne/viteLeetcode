@@ -1,4 +1,5 @@
 import getPriseWhitDot from "./priceWithDot.js"
+import {busketAddAndOpen} from "../addEventListener.js"
 
 function prodactHtml(elemHtml, image, id, name, price){
     console.log(price);
@@ -40,5 +41,11 @@ function prodactHtml(elemHtml, image, id, name, price){
     $pProductFeaturedPrice.className = "product_featured_price"
     $pProductFeaturedPrice.textContent = priceWithDot
     $divCardProductHome.appendChild($pProductFeaturedPrice);
+    
+    let idBasketAddAndOpen = `toDoBasketOpen_${id}`
+    const $EventBasketAddAndOpen = document.getElementById(idBasketAddAndOpen)
+    busketAddAndOpen($EventBasketAddAndOpen, id)
+    
+    // const $buttonLoupeid = document.
 }
 export default prodactHtml;

@@ -3,6 +3,7 @@
 import card from '../card/card.js';
 import menuLink from './menuLink.js';
 import LogoMenu from "../../img/logo/logo-black.svg"
+import {cardOpen} from "../addEventListener.js"
 
 
 function menujs(elementHtml, data) {
@@ -48,7 +49,8 @@ function menujs(elementHtml, data) {
   $spanBasketSumItems.append($divBasketItemsSumm);
   const elemButtinCard = document.getElementById("elemButtinCard")
 
+  cardOpen(elemButtinCard)
 
-  elemButtinCard.addEventListener("click", card(elementHtml))
+  // elemButtinCard.addEventListener("click", card(elementHtml))
 }
 export default menujs;

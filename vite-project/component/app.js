@@ -3,6 +3,7 @@ import { dataMenuLink } from './data.js';
 import {chekingis} from "./product/product.js"
 import mainBlock from './mainBlock/mainBlock.js';
 import { cheking } from './addEventListener.js';
+import {checkLocalStorage} from "./card/checkCard.js"
 // import { setupCounter } from './counter.js';
 
 function App() {
@@ -38,9 +39,8 @@ function App() {
   $buttonCatalogBlock.className = 'catalog_block_button';
   $buttonCatalogBlock.textContent = 'all products';
   $aLinkProduct.append($buttonCatalogBlock);
+  checkLocalStorage();
 
-  
-
-  
+//   $app.removeChild($divMainCatalogBlock)
 }
 export default App;

@@ -1,7 +1,7 @@
 import cardProduct from './cardProduct';
 import { cardClose } from "../addEventListener.js";
 
-function card(elemHtml) {
+function card() {
 //   const $busketOpen = document.createElement('div');
 //   $busketOpen.id = 'basket_open';
 //   elemHtml.append($busketOpen);
