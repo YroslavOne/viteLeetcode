@@ -1,51 +1,58 @@
-import {basketProductArray} from "./checkCard"
-console.log(basketProductArray)
+import { basketProductArray } from './checkCard';
+import getPriseWhitDot from '../product/priceWithDot.js';
+console.log(basketProductArray);
 
 export function quantityProduct(idElem) {
-    let ifPruductTrue = 0;
-    if (basketProductArray.length > 0) {
-      basketProductArray.forEach((element) => {
-        if (element.id === idElem) {
-          element.quantity = element.quantity + 1;
-          localStorage.basketProduct = JSON.stringify(basketProductArray);
-          ifPruductTrue = 1;
-        //   quantityBasketProduct(basketProductArray);
-        }
-      });
-      console.log(ifPruductTrue);
-  
-      if (ifPruductTrue === 0) {
-        addProductId(idElem);
-        ifPruductTrue = 0;
+  let ifPruductTrue = 0;
+  if (basketProductArray.length > 0) {
+    basketProductArray.forEach((element) => {
+      if (element.id === idElem) {
+        element.quantity = element.quantity + 1;
+        localStorage.basketProduct = JSON.stringify(basketProductArray);
+        ifPruductTrue = 1;
+        console.log(basketProductArray);
+        quantityBasketProduct(basketProductArray);
       }
-    } else {
+    });
+    console.log(ifPruductTrue);
+
+    if (ifPruductTrue === 0) {
+      console.log('addProduct');
       addProductId(idElem);
+      ifPruductTrue = 0;
     }
+  } else {
+    console.log('addProduct2');
+
+    addProductId(idElem);
   }
-  
-  
-  function addProductId(idElem) {
-    let arrayProduct = JSON.parse(localStorage.storage)
-    arrayProduct.forEach(element => {
-      if(idElem === element.id)
+}
+
+function addProductId(idElem) {
+  let arrayProduct = JSON.parse(localStorage.storage);
+  console.log();
+  arrayProduct.forEach((element) => {
+    if (idElem === element.id)
       basketProductArray.push({
         id: element.id,
         name: element.fields.name,
-        price: roundUpPrice(element.fields.price),
+        price: getPriseWhitDot(element.fields.price),
         img: element.fields.image[0].url,
         quantity: 1,
       });
-    });
-    
-    localStorage.basketProduct = JSON.stringify(basketProductArray);
-    // quantityBasketProduct(basketProductArray);
-  }
-  
-//   function quantityBasketProduct(basketProductArray) {
-//     let sumProduct = 0;
-//     basketProductArray.forEach((element) => {
-//       sumProduct = sumProduct + element.quantity;
-//     });
-//     console.log(sumProduct);
-//     document.getElementById('basket_summ_items').innerHTML = sumProduct;
-//   }
+    console.log(basketProductArray);
+  });
+
+  localStorage.basketProduct = JSON.stringify(basketProductArray);
+  quantityBasketProduct(basketProductArray);
+}
+
+function quantityBasketProduct(basketProductArray) {
+  let sumProduct = 0;
+  basketProductArray.forEach((element) => {
+    sumProduct = sumProduct + element.quantity;
+  });
+  console.log(sumProduct);
+  const $BasketSummItems = document.getElementById('basket_summ_items');
+  $BasketSummItems.textContent = sumProduct;
+}
