@@ -5,10 +5,12 @@ export function cheking(idelement){
     idelement.addEventListener('click', () => console.log("hi men"))
 }
 
-export function cardClose(elemHtml){
+export function cardClose(elemHtml, elementForClaen, tishElemDelete){
     elemHtml.addEventListener('click', () => {
         const $busketClose = document.getElementById("basket_open")
         $busketClose.className = "basket_close"
+        // const $idDisplayFlexBasketProduct = document.getElementById("display_flex_basket_product")
+        elementForClaen.removeChild(tishElemDelete)
       });
 }
 export function cardOpen(elemHtml){

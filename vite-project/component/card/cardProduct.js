@@ -1,22 +1,28 @@
-function cardProduct(elemHtml) {
+// import { basketProductArray } from './checkCard';
+
+function cardProduct(elemHtml, basketProductArray) {
   const $divDisplayFlexBasketProduct = document.createElement('div');
   $divDisplayFlexBasketProduct.className = 'display_flex_basket_product';
+  $divDisplayFlexBasketProduct.id = 'display_flex_basket_product';
+
   elemHtml.appendChild($divDisplayFlexBasketProduct);
   const $divImgElemBasketProduct = document.createElement('div');
   $divImgElemBasketProduct.className = 'img_elem_basket_product';
   $divDisplayFlexBasketProduct.appendChild($divImgElemBasketProduct);
   const $imgElemBasketProduct = document.createElement('img');
-  $imgElemBasketProduct.src =
-    'https://storage.mds.yandex.net/get-canvas-html5/1003119/8cf9e790-4057-43c2-8d7b-0baf6acddf3b/image.jpg';
+  console.log(basketProductArray)
+  $imgElemBasketProduct.src = basketProductArray.img;
   $divImgElemBasketProduct.appendChild($imgElemBasketProduct);
   const $divTextElemBasketProduct = document.createElement('div');
   $divTextElemBasketProduct.className = 'text_elem_basket_product';
   $divDisplayFlexBasketProduct.appendChild($divTextElemBasketProduct);
   const $pTitleElemBasketProduct = document.createElement('p');
   $pTitleElemBasketProduct.className = 'title_elem_basket_product';
+  $pTitleElemBasketProduct.textContent = basketProductArray.name;
   $divTextElemBasketProduct.appendChild($pTitleElemBasketProduct);
   const $pPriceElemBasketProduct = document.createElement('p');
   $pPriceElemBasketProduct.className = 'price_elem_basket_product';
+  $pPriceElemBasketProduct.textContent = basketProductArray.price;
   $divTextElemBasketProduct.appendChild($pPriceElemBasketProduct);
   const $buttonElemBasketProduct = document.createElement('button');
   $buttonElemBasketProduct.className = 'button_elem_basket_product';
@@ -38,6 +44,7 @@ function cardProduct(elemHtml) {
 
   const $pQuantityTextBasketProduct = document.createElement('p');
   $pQuantityTextBasketProduct.className = 'quantity_text_basket_product';
+  $pQuantityTextBasketProduct.textContent = basketProductArray.quantity;
   $divQuantityElemBasketProduct.appendChild($pQuantityTextBasketProduct);
 
   const $buttonQuantityMinus = document.createElement('button');

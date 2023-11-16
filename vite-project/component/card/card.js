@@ -1,5 +1,8 @@
 import cardProduct from './cardProduct';
 import { cardClose } from "../addEventListener.js";
+import { forEach } from 'lodash';
+import { basketProductArray } from './checkCard';
+import {cardSummAllProduct} from "./cardSumAllProduct"
 
 function card() {
 //   const $busketOpen = document.createElement('div');
@@ -10,6 +13,7 @@ function card() {
 
   const $blockBasket = document.createElement('div');
   $blockBasket.className = 'block_basket';
+  $blockBasket.id = 'block_basket';
   $busketOpen.append($blockBasket);
   const $closeBasket = document.createElement('div');
   $closeBasket.className = 'close_basket';
@@ -32,14 +36,16 @@ function card() {
   const $elemBlockBasketProduct = document.getElementById(
     'block_basket_product'
   );
-  cardProduct($elemBlockBasketProduct);
+  basketProductArray.forEach((elementArray) =>{
+    cardProduct($elemBlockBasketProduct, elementArray)
+  })
 
   const $divPraiseBasket = document.createElement('div');
   $divPraiseBasket.className = 'div_prise_basket';
   $basketBlockMain.append($divPraiseBasket);
   const $pPraiseBasket = document.createElement('p');
   $pPraiseBasket.className = '_prise_basket';
-  $pPraiseBasket.textContent = `Total : $сумма`;
+  $pPraiseBasket.textContent = `Total: $${cardSummAllProduct()}`;
   $divPraiseBasket.append($pPraiseBasket);
 
   const $buttonBasketChekout = document.createElement('button');
@@ -48,8 +54,11 @@ function card() {
   $basketBlockMain.append($buttonBasketChekout);
 
 
+
   const $clickElemCloseBasket = document.getElementById('toDoBasketClose');
-  cardClose($clickElemCloseBasket)
+  const $idBlockBasket = document.getElementById('block_basket')
+    cardClose($clickElemCloseBasket, $busketOpen, $idBlockBasket)
+  
 }
 
 export default card;
