@@ -1,6 +1,7 @@
 // import { basketProductArray } from './checkCard';
+import {upDatePlus, upDateMinus, upDateRemove} from "../addEventListener.js"
 
-function cardProduct(elemHtml, basketProductArray) {
+function cardProduct(elemHtml, basketProductArray, index) {
   const $divDisplayFlexBasketProduct = document.createElement('div');
   $divDisplayFlexBasketProduct.className = 'display_flex_basket_product';
   $divDisplayFlexBasketProduct.id = 'display_flex_basket_product';
@@ -25,16 +26,16 @@ function cardProduct(elemHtml, basketProductArray) {
   $pPriceElemBasketProduct.textContent = basketProductArray.price;
   $divTextElemBasketProduct.appendChild($pPriceElemBasketProduct);
   const $buttonElemBasketProduct = document.createElement('button');
-  $buttonElemBasketProduct.className = 'button_elem_basket_product';
-  $buttonElemBasketProduct.id = 'removeItemBasket';
+  $buttonElemBasketProduct.className = `button_elem_basket_product removeItemBasket${basketProductArray.id}`;
+  $buttonElemBasketProduct.id = index;
   $buttonElemBasketProduct.textContent = 'remove';
   $divTextElemBasketProduct.appendChild($buttonElemBasketProduct);
   const $divQuantityElemBasketProduct = document.createElement('div');
   $divQuantityElemBasketProduct.className = 'quantity_elem_basket_product';
   $divDisplayFlexBasketProduct.appendChild($divQuantityElemBasketProduct);
   const $buttonQuantityPlus = document.createElement('button');
-  $buttonQuantityPlus.className = 'quantity_plus';
-  $buttonQuantityPlus.id = 'productPlus';
+  $buttonQuantityPlus.className = `quantity_plus productPlus${basketProductArray.id}`;
+  $buttonQuantityPlus.id = index;
   $divQuantityElemBasketProduct.appendChild($buttonQuantityPlus);
   const $iProductPlus = document.createElement('i');
   $iProductPlus.className = 'bi bi-caret-up';
@@ -48,29 +49,21 @@ function cardProduct(elemHtml, basketProductArray) {
   $divQuantityElemBasketProduct.appendChild($pQuantityTextBasketProduct);
 
   const $buttonQuantityMinus = document.createElement('button');
-  $buttonQuantityMinus.className = 'quantity_minus';
-  $buttonQuantityMinus.id = 'productMinus';
+  $buttonQuantityMinus.className = `quantity_minus productMinus${basketProductArray.id}`;
+  $buttonQuantityMinus.id = index;
   $divQuantityElemBasketProduct.appendChild($buttonQuantityMinus);
   const $iProductMinus = document.createElement('i');
   $iProductMinus.className = 'bi bi-caret-down';
   $iProductMinus.id = 'productMinus';
   $buttonQuantityMinus.appendChild($iProductMinus);
 
-  // <div class="display_flex_basket_product">
-  // <div class="img_elem_basket_product">
-  //     <img src="${element.img}" alt="">
-  // </div>
-  // <div class="text_elem_basket_product">
-  // <p class="title_elem_basket_product">${element.name}</p>
-  // <p class="price_elem_basket_product">${element.price}</p>
-  // <button class="button_elem_basket_product" onclick="removeItemBasket(${indexObjProduct})">remove</button>
 
-  // </div>
-  // <div class="quantity_elem_basket_product">
-  // <button class="quantity_plus" onclick=productPlus()><i class="bi bi-caret-up"></i></button>
-  // <p class="quantity_text_basket_product">${element.quantity}</p>
-  // <button class="quantity_minus" onclick=productMinus()><i class="bi bi-caret-down"></i></button>
-  // </div>
-  // </div>
+  const $productPlus = document.querySelector(`.productPlus${basketProductArray.id}`)
+  const $productMinus = document.querySelector(`.productMinus${basketProductArray.id}`)
+  const $productRemove = document.querySelector(`.removeItemBasket${basketProductArray.id}`)
+  upDatePlus($productPlus, index)
+  upDateMinus($productMinus, index)
+  upDateRemove($productRemove, index)
+
 }
 export default cardProduct;

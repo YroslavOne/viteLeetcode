@@ -2,7 +2,6 @@ import getPriseWhitDot from "./priceWithDot.js"
 import {busketAddAndOpen} from "../addEventListener.js"
 
 function prodactHtml(elemHtml, image, id, name, price){
-    console.log(price);
     const priceWithDot = getPriseWhitDot(price);
     const $divCardProductHome = document.createElement('div');
     $divCardProductHome.className = "card_product_home";

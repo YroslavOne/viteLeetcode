@@ -1,24 +1,29 @@
+import card from './card.js';
+import {cleanListCard} from "../addEventListener.js"
+import {basketProductArray} from './checkCard.js'
 
-
-function removeItemBasket(indexArr){
-    arrayProductsBaskets.splice(indexArr, 1);
-    localStorage.basketProduct = JSON.stringify(arrayProductsBaskets)
-    basketOpen()
+export function removeItemBasket(indexArr){
+    basketProductArray.splice(indexArr, 1);
+    localStorage.basketProduct = JSON.stringify(basketProductArray)
+    cleanListCard();
+    card();
 }
 
-function productPlus(indexArr){
-    arrayProductsBaskets[indexArr].quantity++
-    localStorage.basketProduct = JSON.stringify(arrayProductsBaskets)
-    basketOpen()
+export function productPlus(indexArr){
+    basketProductArray[indexArr].quantity++
+    localStorage.basketProduct = JSON.stringify(basketProductArray)
+    cleanListCard();
+    card();
 }
 
-function productMinus(indexArr){
-    arrayProductsBaskets[indexArr].quantity--
-    if(arrayProductsBaskets[indexArr].quantity ===0){
+export function productMinus(indexArr){
+    basketProductArray[indexArr].quantity--
+    if(basketProductArray[indexArr].quantity ===0){
         removeItemBasket(indexArr)
     } else{
-        localStorage.basketProduct = JSON.stringify(arrayProductsBaskets)
-        basketOpen()
+        localStorage.basketProduct = JSON.stringify(basketProductArray)
+        cleanListCard();
+        card();
     }
     
 }

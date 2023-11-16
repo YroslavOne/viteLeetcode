@@ -36,8 +36,8 @@ function card() {
   const $elemBlockBasketProduct = document.getElementById(
     'block_basket_product'
   );
-  basketProductArray.forEach((elementArray) =>{
-    cardProduct($elemBlockBasketProduct, elementArray)
+  basketProductArray.forEach((elementArray , index) =>{
+    cardProduct($elemBlockBasketProduct, elementArray , index)
   })
 
   const $divPraiseBasket = document.createElement('div');
@@ -56,8 +56,8 @@ function card() {
 
 
   const $clickElemCloseBasket = document.getElementById('toDoBasketClose');
-  const $idBlockBasket = document.getElementById('block_basket')
-    cardClose($clickElemCloseBasket, $busketOpen, $idBlockBasket)
+    cardClose($clickElemCloseBasket)
+
   
 }
 

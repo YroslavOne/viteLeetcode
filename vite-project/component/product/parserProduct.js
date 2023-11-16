@@ -16,7 +16,6 @@ export function getProducts(objFilter) {
   }
 
   function pageCheckForHome(productsFeatured, objFilter) {
-    console.log(productsFeatured.fields.image[0].url)
     const $idElemCatalogHtml = document.getElementById('catalog_block')
     if (productsFeatured.fields.featured === objFilter.featured) {
     let imageForProduct = productsFeatured.fields.image[0].url;

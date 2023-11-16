@@ -1,6 +1,5 @@
 import { basketProductArray } from './checkCard';
 import getPriseWhitDot from '../product/priceWithDot.js';
-console.log(basketProductArray);
 
 export function quantityProduct(idElem) {
   let ifPruductTrue = 0;
@@ -40,7 +39,6 @@ function addProductId(idElem) {
         img: element.fields.image[0].url,
         quantity: 1,
       });
-    console.log(basketProductArray);
   });
 
   localStorage.basketProduct = JSON.stringify(basketProductArray);
