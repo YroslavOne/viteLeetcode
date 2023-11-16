@@ -54,7 +54,7 @@ export function upDateMinus(elementHtml, index){
           });
         }
 
-        export function upDateRemove(elementHtml, index){
+export function upDateRemove(elementHtml, index){
             elementHtml.addEventListener('click', () => {
                 removeItemBasket(index)
                 cleanListCard()

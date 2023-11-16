@@ -13,11 +13,11 @@ function App() {
   $cardOpen.id = 'basket_open';
   document.body.insertBefore($cardOpen, $app);
   menujs($app, dataMenuLink)
-  // mainBlock($app);
+  mainBlock($app);
   const objFilter = {
     featured: true,
   }
-  // localStorage.clear();
+  localStorage.clear();
   chekingis(objFilter);
 
   const $divMainCatalogBlock = document.createElement("div");
@@ -40,7 +40,7 @@ function App() {
   $buttonCatalogBlock.textContent = 'all products';
   $aLinkProduct.append($buttonCatalogBlock);
   checkLocalStorage();
-  quantityBasketProduct(basketProductArray)
+
 //   $app.removeChild($divMainCatalogBlock)
 }
 export default App;

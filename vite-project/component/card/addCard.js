@@ -45,7 +45,7 @@ function addProductId(idElem) {
   quantityBasketProduct(basketProductArray);
 }
 
-function quantityBasketProduct(basketProductArray) {
+export function quantityBasketProduct(basketProductArray) {
   let sumProduct = 0;
   basketProductArray.forEach((element) => {
     sumProduct = sumProduct + element.quantity;
