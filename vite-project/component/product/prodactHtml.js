@@ -1,5 +1,5 @@
 import getPriseWhitDot from "./priceWithDot.js"
-import {busketAddAndOpen} from "../addEventListener.js"
+import {busketAddAndOpen, loupeClick} from "../addEventListener.js"
 
 function prodactHtml(elemHtml, image, id, name, price){
     const priceWithDot = getPriseWhitDot(price);
@@ -19,8 +19,8 @@ function prodactHtml(elemHtml, image, id, name, price){
     const $aLoupe = document.createElement("a");
     $divBasketAndLoupe.appendChild($aLoupe);
     const $buttonLoupe = document.createElement("button");
-    $buttonLoupe.id = `loupeOnClick_${id}`;
-    $buttonLoupe.className = "loupe"
+    $buttonLoupe.id = id;
+    $buttonLoupe.className = `loupe loupeOnClick_${id}`
     $aLoupe.appendChild($buttonLoupe);
     const $iLoupe = document.createElement('i'); 
     $iLoupe.className = "bi bi-search";
@@ -44,6 +44,8 @@ function prodactHtml(elemHtml, image, id, name, price){
     let idBasketAddAndOpen = `toDoBasketOpen_${id}`
     const $EventBasketAddAndOpen = document.getElementById(idBasketAddAndOpen)
     busketAddAndOpen($EventBasketAddAndOpen, id)
+    const $idLoupe = document.querySelector(`.loupeOnClick_${id}`);
+    loupeClick($idLoupe, id);
     
     // const $buttonLoupeid = document.
 }

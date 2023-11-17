@@ -3,7 +3,10 @@ import { dataMenuLink } from './data.js';
 import {chekingis} from "./product/product.js"
 import mainBlock from './mainBlock/mainBlock.js';
 import { cheking } from './addEventListener.js';
+import {quantityBasketProduct} from './card/addCard.js'
+import { basketProductArray } from './card/checkCard.js';
 import {checkLocalStorage} from "./card/checkCard.js"
+import Home from "./home.js"
 // import { setupCounter } from './counter.js';
 
 function App() {
@@ -18,29 +21,11 @@ function App() {
     featured: true,
   }
   // localStorage.clear();
-  chekingis(objFilter);
-
-  const $divMainCatalogBlock = document.createElement("div");
-  $divMainCatalogBlock.className = "main_catalog_block";
-  $app.append($divMainCatalogBlock);
-  const $h3Featured = document.createElement('h3');
-  $h3Featured.className = "featured";
-  $h3Featured.textContent = "Featured";
-  $divMainCatalogBlock.append($h3Featured);
-  const $divCatalogBlock = document.createElement("div");
-  $divCatalogBlock.className = "catalog_block";
-  $divCatalogBlock.id = "catalog_block"
-  $divMainCatalogBlock.append($divCatalogBlock);
-  const $aLinkProduct = document.createElement('a');
-  $aLinkProduct.className = "linksProducts"
-  $aLinkProduct.id = "products"
-  $divMainCatalogBlock.append($aLinkProduct);
-  const $buttonCatalogBlock = document.createElement('button');
-  $buttonCatalogBlock.className = 'catalog_block_button';
-  $buttonCatalogBlock.textContent = 'all products';
-  $aLinkProduct.append($buttonCatalogBlock);
+  // chekingis(objFilter);
+  Home()
   checkLocalStorage();
   quantityBasketProduct(basketProductArray)
+ 
 //   $app.removeChild($divMainCatalogBlock)
 }
 export default App;

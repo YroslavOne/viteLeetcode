@@ -1,5 +1,7 @@
 import prodactHtml from "./prodactHtml"
 
+export let arrayaProductInStorega = [];
+
 export function getProducts(objFilter) {
     let url = `https://course-api.com/javascript-store-products`;
     fetch(url)
@@ -9,7 +11,7 @@ export function getProducts(objFilter) {
 
   function arrayProduct(products, objFilter) {
     localStorage.storage = JSON.stringify(products)
-    let arrayaProductInStorega = JSON.parse(localStorage.storage)
+    arrayaProductInStorega = JSON.parse(localStorage.storage)
     arrayaProductInStorega.forEach((element) => {
         pageCheckForHome(element, objFilter);
       });

@@ -1,4 +1,5 @@
 // import { variableCard } from '../../variabel.js';
+import {clicklinkMenu} from '../addEventListener.js'
 // import { setupCounter } from '../../counter.js';
 function menuLink(elemHtml, dataMenuLink) {
   dataMenuLink.forEach((element) => {
@@ -13,9 +14,8 @@ function menuLink(elemHtml, dataMenuLink) {
     $elemLi.append($elemA);
     elemHtml.append($elemLi);
 
-    document
-    .getElementById(element.title)
-    .addEventListener('click', () => console.log(element.title));
+    const $idElemTitle = document.getElementById(element.title)
+    clicklinkMenu($idElemTitle, element.title)
 
     // document.body.insertBefore($elemLi, currentDiv);
   });

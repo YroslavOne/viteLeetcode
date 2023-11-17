@@ -1,6 +1,8 @@
 import card from "./card/card.js"
 import { quantityProduct } from "./card/addCard.js";
 import {productPlus, productMinus, removeItemBasket} from "./card/cardManipulation.js"
+import Home from "./home.js";
+import loupe from "./loupe.js";
 
 
 export function cheking(idelement){
@@ -62,4 +64,24 @@ export function upDateRemove(elementHtml, index){
               });
             }
 
-        
+export function loupeClick(elementHtml, idLoupe){
+    elementHtml.addEventListener('click',()=>{
+        console.log(idLoupe);
+        localStorage.idLoupe = idLoupe;
+        loupe(elementHtml, idLoupe)
+        console.log(idLoupe);
+    })
+}
+export function clicklinkMenu(elementHtml, nameFunction){
+    elementHtml.addEventListener('click', () => {
+        if(nameFunction ==="Home"){
+            Home()
+
+        }if(nameFunction ==="About"){
+            // About()
+        } if(nameFunction ==="Product"){
+            // Product()
+        }
+    });
+}
+

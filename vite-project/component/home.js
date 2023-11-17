@@ -1,25 +1,30 @@
-import menujs from './menu/menu.js';
-import { dataMenuLink } from './data.js';
+// import menujs from './menu/menu.js';
+// import { dataMenuLink } from './data.js';
 import {chekingis} from "./product/product.js"
 import mainBlock from './mainBlock/mainBlock.js';
-import { cheking } from './addEventListener.js';
+// import { cheking } from './addEventListener.js';
 import {checkLocalStorage} from "./card/checkCard.js"
 // import { setupCounter } from './counter.js';
 
-function App() {
+function Home() {
   const $app = document.getElementById('app');
-  const $cardOpen = document.createElement('div');
-  $cardOpen.className = 'basket_close';
-  $cardOpen.id = 'basket_open';
-  document.body.insertBefore($cardOpen, $app);
-  menujs($app, dataMenuLink)
+//   const $cardOpen = document.createElement('div');
+//   $cardOpen.className = 'basket_close';
+//   $cardOpen.id = 'basket_open';
+//   document.body.insertBefore($cardOpen, $app);
+//   menujs($app, dataMenuLink)
+
+
+
+
+  
   mainBlock($app);
   const objFilter = {
     featured: true,
   }
-  localStorage.clear();
-  chekingis(objFilter);
 
+
+  chekingis(objFilter);
   const $divMainCatalogBlock = document.createElement("div");
   $divMainCatalogBlock.className = "main_catalog_block";
   $app.append($divMainCatalogBlock);
@@ -43,4 +48,4 @@ function App() {
 
 //   $app.removeChild($divMainCatalogBlock)
 }
-export default App;
+export default Home;

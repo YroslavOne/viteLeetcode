@@ -1,16 +1,12 @@
+import {arrayaProductInStorega} from "../product/parserProduct.js"
+
 const $htmlGenerateBreadCrumbs = document.getElementById('breadCrumbs');
 const $htmlGenerateTitle = document.getElementById('breadTitle');
 const $htmlGenerateCardItem = document.getElementById('cardItem');
-loupeRun();
 
-function loupeRun() {
-  let idLoupe = localStorage.idLoupe;
-  let arrayCatalog = JSON.parse(localStorage.storage);
-  filterById(arrayCatalog, idLoupe);
-}
 
-function filterById(product, idLoupe) {
-  let filterProduct = product.filter((item) => item.id === idLoupe);
+export function filterById(elementHtml, idLoupe) {
+  let filterProduct = arrayaProductInStorega.filter((item) => item.id === idLoupe);
   console.log(filterProduct);
   generateHtmlLoupe(filterProduct);
 }
