@@ -1,10 +1,10 @@
 // import { variableCard } from '../../variabel.js';
 // import { setupCounter } from '../../counter.js';
-import card from '../card/card.js';
+// import card from '../card/card.js';
 import menuLink from './menuLink.js';
 import LogoMenu from "../../img/logo/logo-black.svg"
 import {cardOpen} from "../addEventListener.js"
-import { basketProductArray } from '../card/checkCard.js';
+// import { basketProductArray } from '../card/checkCard.js';
 
 
 function menujs(elementHtml, data) {
@@ -25,8 +25,7 @@ function menujs(elementHtml, data) {
   $divLogoMenu.className = "width_30 logo_menu";
   $menuBlock.append($divLogoMenu);
   const $imgLogMenu = document.createElement("img");
-  const $logoMenu = window.location.href
-  $imgLogMenu.src = `$logoMenu`;
+  $imgLogMenu.src = LogoMenu;
   $divLogoMenu.append($imgLogMenu);
   const $divBasketWidth = document.createElement("div");
   $divBasketWidth.className = "width_30 basket";

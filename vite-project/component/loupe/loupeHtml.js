@@ -21,6 +21,8 @@ $divProductCardLoupe.className = "img_product_cart_loupe";
 $divBlockCardItem.appendChild($divProductCardLoupe);
 const $imgProductCardItem = document.createElement('img');
 $imgProductCardItem.src = filterArrayForLoupe[0].fields.image[0].url;
+$divProductCardLoupe.appendChild($imgProductCardItem);
+
 const $divThisDiv = document.createElement('div');
 $divBlockCardItem.appendChild($divThisDiv);
 const $h1TitleLoupe = document.createElement('h1');
@@ -33,14 +35,17 @@ $h2CompanyLoupe.textContent = `By ${filterArrayForLoupe[0].fields.company}`;
 $divThisDiv.appendChild($h2CompanyLoupe);
 const $h3PriseLoupe = document.createElement('h3');
 $h3PriseLoupe.className = "prise_loupe";
-// let thisPrise = filterArrayForLoupe[0].fields.price
+const $divColorFlex = document.createElement('div');
+    $divColorFlex.className = "colorFlex";
+    // $divColorFlex.style.backgroundColor = element;
+    $divThisDiv.appendChild($divColorFlex);
 $h3PriseLoupe.textContent = getPriseWhitDot(filterArrayForLoupe[0].fields.price);
 $divThisDiv.appendChild($h3PriseLoupe);
 filterArrayForLoupe[0].fields.colors.forEach((element) => {
-    const $divColorFlex = document.createElement('div');
-    $divColorFlex.className = "colorFlex";
-    $divColorFlex.textContent = element;
-    $divThisDiv.appendChild($divColorFlex);
+    const $aColorElem = document.createElement('a');
+    $aColorElem.className = "colorElem";
+    $aColorElem.style.backgroundColor = element;
+    $divColorFlex.appendChild($aColorElem);
 });
 
 const $pDiscriptionLoupe = document.createElement('p');

@@ -1,8 +1,8 @@
 import menujs from './menu/menu.js';
 import { dataMenuLink } from './data.js';
-import {chekingis} from "./product/product.js"
-import mainBlock from './mainBlock/mainBlock.js';
-import { cheking } from './addEventListener.js';
+// import {chekingis} from "./product/product.js"
+// import mainBlock from './mainBlock/mainBlock.js';
+// import { cheking } from './addEventListener.js';
 import {quantityBasketProduct} from './card/addCard.js'
 import { basketProductArray } from './card/checkCard.js';
 import {checkLocalStorage} from "./card/checkCard.js"

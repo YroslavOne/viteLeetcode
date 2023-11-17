@@ -4,7 +4,6 @@ export function cardSummAllProduct(){
     sumPriceProduct = 0
     basketProductArray.forEach((element)=>{
         sumPriceProduct += element.price*element.quantity
-        console.log(sumPriceProduct)
     })
     return sumPriceProduct
 }
