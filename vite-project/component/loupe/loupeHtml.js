@@ -1,10 +1,13 @@
+import getPriseWhitDot from '../product/priceWithDot.js'
+
+
 function loupeHtml(elementHtml, filterArrayForLoupe){
 const $divBreadCrumbs = document.createElement('div');
-$divBreadCrumbs.className = "breadCrumbs"
-elementHtml.append($divBreadCrumbs);
+$divBreadCrumbs.className = "breadCrumbs";
+elementHtml.appendChild($divBreadCrumbs);
 const $pBreadCrumbs = document.createElement('p');
-$pBreadCrumbs.id = "breadCrumbs"
-$pBreadCrumbs.textContent = "ААААААААААААААААААА";
+$pBreadCrumbs.id = "breadCrumbs";
+$pBreadCrumbs.textContent = `Home / ${filterArrayForLoupe[0].fields.name}`;
 $pBreadCrumbs.appendChild($divBreadCrumbs)
 const $divCardItem = document.createElement('div');
 $divCardItem.className = "cardItem";
@@ -17,25 +20,29 @@ const $divProductCardLoupe = document.createElement('div');
 $divProductCardLoupe.className = "img_product_cart_loupe";
 $divBlockCardItem.appendChild($divProductCardLoupe);
 const $imgProductCardItem = document.createElement('img');
-$imgProductCardItem.src = "AAAAAAAAAAAAAAAAAAAAAAA";
+$imgProductCardItem.src = filterArrayForLoupe[0].fields.image[0].url;
 const $divThisDiv = document.createElement('div');
 $divBlockCardItem.appendChild($divThisDiv);
 const $h1TitleLoupe = document.createElement('h1');
 $h1TitleLoupe.className = "title_loupe";
-$h1TitleLoupe.textContent = "AAAAAAAAAAAAAAAAAAAAAAA";
+$h1TitleLoupe.textContent = filterArrayForLoupe[0].fields.name;
 $divThisDiv.appendChild($h1TitleLoupe);
 const $h2CompanyLoupe = document.createElement('h2');
 $h2CompanyLoupe.className = "company_loupe";
-$h2CompanyLoupe.textContent = "By AAAAAAAAAAAAAAAAAAAAAAA";
+$h2CompanyLoupe.textContent = `By ${filterArrayForLoupe[0].fields.company}`;
 $divThisDiv.appendChild($h2CompanyLoupe);
 const $h3PriseLoupe = document.createElement('h3');
 $h3PriseLoupe.className = "prise_loupe";
-$h3PriseLoupe.textContent = "$AAAAAAAAAAAAAAAAAAAAAAA";
+// let thisPrise = filterArrayForLoupe[0].fields.price
+$h3PriseLoupe.textContent = getPriseWhitDot(filterArrayForLoupe[0].fields.price);
 $divThisDiv.appendChild($h3PriseLoupe);
-const $divColorFlex = document.createElement('div');
-$divColorFlex.className = "colorFlex";
-$divColorFlex.textContent = "AAAAAAAAAAAAAAAAAAAAAAA";
-$divThisDiv.appendChild($divColorFlex);
+filterArrayForLoupe[0].fields.colors.forEach((element) => {
+    const $divColorFlex = document.createElement('div');
+    $divColorFlex.className = "colorFlex";
+    $divColorFlex.textContent = element;
+    $divThisDiv.appendChild($divColorFlex);
+});
+
 const $pDiscriptionLoupe = document.createElement('p');
 $pDiscriptionLoupe.className = "description_loupe";
 $pDiscriptionLoupe.textContent = "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge";
@@ -45,7 +52,6 @@ $buttonTapLoupe.className = "basket_tap_loupe";
 $buttonTapLoupe.textContent = "add to cart";
 $buttonTapLoupe.id = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 $divThisDiv.appendChild($buttonTapLoupe);
-
 
 
 

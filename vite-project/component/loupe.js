@@ -1,8 +1,9 @@
 import {filterById} from "./loupe/loupeManipulation.js"
 import cleanPage from "./cleanPage.js";
-function loupe(elementHtml, id){
+function loupe(id){
 cleanPage()
+const $app = document.getElementById('app')
 
-filterById(elementHtml, id)
+filterById($app, id)
 }
 export default loupe;

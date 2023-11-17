@@ -68,8 +68,7 @@ export function loupeClick(elementHtml, idLoupe){
     elementHtml.addEventListener('click',()=>{
         console.log(idLoupe);
         localStorage.idLoupe = idLoupe;
-        loupe(elementHtml, idLoupe)
-        console.log(idLoupe);
+        loupe(idLoupe)
     })
 }
 export function clicklinkMenu(elementHtml, nameFunction){
