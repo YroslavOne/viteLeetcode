@@ -1,3 +1,6 @@
+import {arrayaProductInStorega} from "./product/parserProduct.js"
+import maxValuePrice from "./product/maxPrice";
+
 export let dataMenuLink = [
     {
         title: "Home",
@@ -17,6 +20,7 @@ export let dataMenuLink = [
 export let objFilter = {
     featured: null,
     nameProduct: null,
-    priceProduct: null,
-    companyProduct: null,
+    priceProduct: maxValuePrice(arrayaProductInStorega),
+    companyProduct: "All",
 };
+

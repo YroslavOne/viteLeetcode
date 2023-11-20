@@ -7,11 +7,9 @@ function ProductMainHtml(elementHtml){
     $pBreadCrumbs.id = "breadCrumbs";
     $pBreadCrumbs.textContent = "Home / Products"
     $divBreadCrumbs.append($pBreadCrumbs);
-
-
     const $divBlockProductsFlex = document.createElement("div");
     $divBlockProductsFlex.className = "block_products_flex";
-    $elementHtml.append($divBlockProductsFlex);
+    elementHtml.append($divBlockProductsFlex);
     const $divBlockProducts = document.createElement("div");
     $divBlockProducts.className = "block_products"
     $divBlockProductsFlex.append($divBlockProducts);
@@ -75,3 +73,4 @@ $divBlockProducts.append($divCatalogPrice);
 
 
 }
+export default ProductMainHtml;
