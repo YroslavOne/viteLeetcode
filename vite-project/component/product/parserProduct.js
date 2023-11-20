@@ -1,3 +1,4 @@
+// import { objFilter } from "../data";
 import prodactHtml from "./prodactHtml"
 
 export let arrayaProductInStorega = [];
@@ -14,6 +15,7 @@ export function getProducts(objFilter) {
     arrayaProductInStorega = JSON.parse(localStorage.storage)
     arrayaProductInStorega.forEach((element) => {
         pageCheckForHome(element, objFilter);
+        console.log(objFilter)
       });
   }
 

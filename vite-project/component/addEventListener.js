@@ -4,6 +4,9 @@ import {productPlus, productMinus, removeItemBasket} from "./card/cardManipulati
 import Home from "./home.js";
 import loupe from "./loupe.js";
 import cleanPage from "./cleanPage.js";
+import { objFilter } from "./data.js";
+import Products from "./products.js"
+
 
 
 export function cheking(idelement){
@@ -76,12 +79,13 @@ export function clicklinkMenu(elementHtml, nameFunction){
     elementHtml.addEventListener('click', () => {
         if(nameFunction ==="Home"){
             cleanPage()
-            Home()
+            Home(objFilter)
 
         }if(nameFunction ==="About"){
             // About()
         } if(nameFunction ==="Product"){
-            // Product()
+            cleanPage()
+            Products(objFilter)
         }
     });
 }

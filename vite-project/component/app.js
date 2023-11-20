@@ -1,5 +1,5 @@
 import menujs from './menu/menu.js';
-import { dataMenuLink } from './data.js';
+import { dataMenuLink, objFilter } from './data.js';
 // import {chekingis} from "./product/product.js"
 // import mainBlock from './mainBlock/mainBlock.js';
 // import { cheking } from './addEventListener.js';
@@ -16,13 +16,13 @@ function App() {
   $cardOpen.id = 'basket_open';
   document.body.insertBefore($cardOpen, $app);
   menujs($app, dataMenuLink)
-  // mainBlock($app);
-  const objFilter = {
-    featured: true,
-  }
-  // localStorage.clear();
-  // chekingis(objFilter);
-  Home()
+//   let objFilter = {
+//     featured: null,
+//     nameProduct: null,
+//     priceProduct: null,
+//     companyProduct: null,
+// };
+  Home(objFilter)
   checkLocalStorage();
   quantityBasketProduct(basketProductArray)
  

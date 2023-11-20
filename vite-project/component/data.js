@@ -12,4 +12,11 @@ export let dataMenuLink = [
         title: "About",
         href: "/product.html",
     },
-]
+];
+
+export let objFilter = {
+    featured: null,
+    nameProduct: null,
+    priceProduct: null,
+    companyProduct: null,
+};

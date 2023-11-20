@@ -4,9 +4,10 @@ import {chekingis} from "./product/product.js"
 import mainBlock from './mainBlock/mainBlock.js';
 // import { cheking } from './addEventListener.js';
 import {checkLocalStorage} from "./card/checkCard.js"
+// import objFilter from "./data.js"
 // import { setupCounter } from './counter.js';
 
-function Home() {
+function Home(objFilter) {
   const $app = document.getElementById('app');
 //   const $cardOpen = document.createElement('div');
 //   $cardOpen.className = 'basket_close';
@@ -19,9 +20,7 @@ function Home() {
 
   
   mainBlock($app);
-  const objFilter = {
-    featured: true,
-  }
+  objFilter.featured = true;
 
 
   chekingis(objFilter);
