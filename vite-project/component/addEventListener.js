@@ -3,6 +3,7 @@ import { quantityProduct } from "./card/addCard.js";
 import {productPlus, productMinus, removeItemBasket} from "./card/cardManipulation.js"
 import Home from "./home.js";
 import loupe from "./loupe.js";
+import cleanPage from "./cleanPage.js";
 
 
 export function cheking(idelement){
@@ -74,6 +75,7 @@ export function loupeClick(elementHtml, idLoupe){
 export function clicklinkMenu(elementHtml, nameFunction){
     elementHtml.addEventListener('click', () => {
         if(nameFunction ==="Home"){
+            cleanPage()
             Home()
 
         }if(nameFunction ==="About"){
