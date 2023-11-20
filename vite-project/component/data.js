@@ -1,4 +1,4 @@
-import {arrayaProductInStorega} from "./product/parserProduct.js"
+// import {arrayaProductInStorega} from "./product/parserProduct.js"
 import maxValuePrice from "./product/maxPrice";
 
 export let dataMenuLink = [
@@ -16,11 +16,11 @@ export let dataMenuLink = [
         href: "/product.html",
     },
 ];
-
+let arrayaProductInStor = JSON.parse(localStorage.storage)
 export let objFilter = {
     featured: null,
     nameProduct: null,
-    priceProduct: maxValuePrice(arrayaProductInStorega),
+    priceProduct: maxValuePrice(arrayaProductInStor),
     companyProduct: "All",
 };
 

@@ -5,7 +5,7 @@ function maxValuePrice(arrayProduct) {
         maxValue = element.fields.price;
       }
     });
-    console.log(maxValue)
+    // console.log(Math(String(maxValue).slice(0, -2)))
 
     return maxValue;
   
