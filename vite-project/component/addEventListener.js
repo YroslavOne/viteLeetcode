@@ -6,6 +6,8 @@ import loupe from "./loupe.js";
 import cleanPage from "./cleanPage.js";
 import { objFilter } from "./data.js";
 import Products from "./products.js"
+import { chekingis } from "./product/product.js";
+import cleaneProducts from './product/cleaneProducts.js'
 
 
 
@@ -68,6 +70,8 @@ export function upDateRemove(elementHtml, index){
               });
             }
 
+
+
 export function loupeClick(elementHtml, idLoupe){
     elementHtml.addEventListener('click',()=>{
         console.log(idLoupe);
@@ -90,3 +94,20 @@ export function clicklinkMenu(elementHtml, nameFunction){
     });
 }
 
+export function tapCompany(elementHtml, herId){
+    elementHtml.addEventListener('click', () => {
+        objFilter.companyProduct = herId
+        console.log(objFilter)
+    });
+}
+
+export function tapNameProduct(name){
+        objFilter.nameProduct = name
+        cleaneProducts()
+        chekingis(objFilter)
+}
+export function tapValuePrice(name){
+    objFilter.priceProduct = name
+    cleaneProducts()
+    chekingis(objFilter)
+}

@@ -2,17 +2,18 @@ import getPriseWhitDot from '../product/priceWithDot.js'
 
 
 function loupeHtml(elementHtml, filterArrayForLoupe){
+	
 const $divBreadCrumbs = document.createElement('div');
 $divBreadCrumbs.className = "breadCrumbs";
 elementHtml.appendChild($divBreadCrumbs);
 const $pBreadCrumbs = document.createElement('p');
 $pBreadCrumbs.id = "breadCrumbs";
 $pBreadCrumbs.textContent = `Home / ${filterArrayForLoupe[0].fields.name}`;
-$pBreadCrumbs.appendChild($divBreadCrumbs)
+$divBreadCrumbs.appendChild($pBreadCrumbs)
 const $divCardItem = document.createElement('div');
 $divCardItem.className = "cardItem";
 $divCardItem.id = "cardItem";
-elementHtml.append($divCardItem);
+elementHtml.appendChild($divCardItem);
 const $divBlockCardItem = document.createElement("div");
 $divBlockCardItem.className = "block_cardItem"
 $divCardItem.appendChild($divBlockCardItem);

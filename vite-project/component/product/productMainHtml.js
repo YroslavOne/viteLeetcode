@@ -1,3 +1,11 @@
+import {arrayaProductInStorega} from "./parserProduct"
+import {chekingis} from "./product.js"
+import createArrayCompanyProduct from "./arrayCompanyProduct.js"
+import {tapCompany, tapNameProduct, tapValuePrice} from '../addEventListener.js'
+import { objFilter } from "../data.js";
+import maxValuePrice from "./maxPrice.js"
+import cleaneProducts from './cleaneProducts.js'
+
 function ProductMainHtml(elementHtml){
 
     const $divBreadCrumbs = document.createElement("div");
@@ -24,6 +32,10 @@ function ProductMainHtml(elementHtml){
     $inputTextInput.type = "text"
     $inputTextInput.placeholder = "search..."
     $divSidebar.append($inputTextInput);
+    text_input.oninput = function () {
+        tapNameProduct(text_input.value)
+        cleaneProducts()
+      };
 
     const $divSimplyTwo = document.createElement("div");
     $divSidebar.append($divSimplyTwo);
@@ -38,6 +50,23 @@ function ProductMainHtml(elementHtml){
     $divAllCompany.className = "all_company"
     $divAllCompany.id = "all_company"
     $divSimplyTwo.append($divAllCompany);
+
+    const $ulProducts = document.createElement('ul');
+    $ulProducts.className = "ul_products";
+    $divAllCompany.append($ulProducts);
+
+    let arrayCompany = createArrayCompanyProduct(arrayaProductInStorega)
+    arrayCompany.forEach((element)=>{
+        const $liFilterCompany = document.createElement('li')
+        $liFilterCompany.className = `arraycompany_${element}`
+        $liFilterCompany.textContent = element
+        $ulProducts.append($liFilterCompany);
+
+        const $thisClassLi = document.querySelector(`.arraycompany_${element}`);
+        tapCompany($thisClassLi, element)
+
+    })
+
 
     const $divSimplyOne = document.createElement("div");
     $divSidebar.append($divSimplyOne);
@@ -54,21 +83,37 @@ function ProductMainHtml(elementHtml){
     const $inputvaluePriceInput = document.createElement("input");
     $inputvaluePriceInput.id = "value_price_input"
     $inputvaluePriceInput.type = "range"
+    let arrayaProductInStor = JSON.parse(localStorage.storage)
+    let maxValuePrices = maxValuePrice(arrayaProductInStor)
+    console.log(maxValuePrices)
+    $inputvaluePriceInput.max = maxValuePrices
+    $inputvaluePriceInput.value = maxValuePrices
     $inputvaluePriceInput.step = "1"
     $divSimply.append($inputvaluePriceInput);
+    
+
+    
 
 
     const $pValuePriceInput = document.createElement('p');
     $pValuePriceInput.className = "value_price_input"
     $pValuePriceInput.id = "value_price_in_input"
+    $pValuePriceInput.textContent = `Value: ${objFilter.priceProduct}`
     $divSimply.append($pValuePriceInput);
     
-const $divCatalogPrice = document.createElement('div');
-$divCatalogPrice.className = "catalog_block"
-$divCatalogPrice.id = "catalog_block"
-$divBlockProducts.append($divCatalogPrice);
+    const $divCatalogPrice = document.createElement('div');
+    $divCatalogPrice.className = "catalog_block"
+    $divCatalogPrice.id = "catalog_block"
+    $divBlockProducts.append($divCatalogPrice);
 
+    const idValuePrise = document.getElementById('value_price_in_input')
+    value_price_input.oninput = function () {
+        tapValuePrice(value_price_input.value)
+        idValuePrise.textContent = `Value: ${value_price_input.value}`
+        cleaneProducts()
+      };
 
+      chekingis(objFilter);
 
 
 

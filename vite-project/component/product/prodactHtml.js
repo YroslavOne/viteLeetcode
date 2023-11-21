@@ -1,5 +1,6 @@
 import getPriseWhitDot from "./priceWithDot.js"
 import {busketAddAndOpen, loupeClick} from "../addEventListener.js"
+import { objFilter } from "../data.js";
 
 function prodactHtml(elemHtml, image, id, name, price){
     const priceWithDot = getPriseWhitDot(price);
@@ -46,6 +47,7 @@ function prodactHtml(elemHtml, image, id, name, price){
     busketAddAndOpen($EventBasketAddAndOpen, id)
     const $idLoupe = document.querySelector(`.loupeOnClick_${id}`);
     loupeClick($idLoupe, id);
+    console.log("chek")
     
     // const $buttonLoupeid = document.
 }

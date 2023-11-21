@@ -19,7 +19,7 @@ export let dataMenuLink = [
 let arrayaProductInStor = JSON.parse(localStorage.storage)
 export let objFilter = {
     featured: null,
-    nameProduct: null,
+    nameProduct: "",
     priceProduct: maxValuePrice(arrayaProductInStor),
     companyProduct: "All",
 };

@@ -1,3 +1,5 @@
+import getPriseWhitDot from './priceWithDot.js';
+
 function maxValuePrice(arrayProduct) {
     let maxValue = 0;
     arrayProduct.forEach((element) => {
@@ -5,14 +7,9 @@ function maxValuePrice(arrayProduct) {
         maxValue = element.fields.price;
       }
     });
-    // console.log(Math(String(maxValue).slice(0, -2)))
+    maxValue = Math.ceil(Number(getPriseWhitDot(maxValue)))
 
     return maxValue;
-  
-    // $valuePriseInputRange.setAttribute('max', maxValue);
-    // $valuePriseInputRange.setAttribute('value', maxValue);
-    // priceProduct = maxValue;
-    // valueInInput(maxValue);
   }
 
   export default maxValuePrice;
