@@ -95,7 +95,6 @@ export function clicklinkMenu(elementHtml, nameFunction){
 
          if(nameFunction ==="About"){
             cleanPage()
-            // Products(objFilter)
             About()
             let backgroundLinkMune = "black_li_menu";
             let Backgroundcard = "#222";

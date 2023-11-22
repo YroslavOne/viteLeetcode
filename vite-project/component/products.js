@@ -1,4 +1,3 @@
-// import {objFilter} from "./data.js"
 import cleanPage from "./cleanPage.js";
 import ProductMainHtml from "./product/productMainHtml.js"
 function Products(objFilter){

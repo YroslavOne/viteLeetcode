@@ -4,7 +4,6 @@
 import menuLink from './menuLink.js';
 // import LogoMenu from "https://vanilla-js-store.netlify.app/images/logo-white.svg"
 import {cardOpen} from "../addEventListener.js"
-// import { basketProductArray } from '../card/checkCard.js';
 
 
 function menujs(elementHtml, data) {

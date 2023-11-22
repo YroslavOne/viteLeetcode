@@ -1,4 +1,3 @@
-// import {arrayaProductInStorega} from "./product/parserProduct.js"
 import maxValuePrice from "./product/maxPrice";
 
 export let dataMenuLink = [

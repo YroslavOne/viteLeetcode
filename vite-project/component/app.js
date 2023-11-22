@@ -16,16 +16,9 @@ function App() {
   $cardOpen.id = 'basket_open';
   document.body.insertBefore($cardOpen, $app);
   menujs($app, dataMenuLink)
-//   let objFilter = {
-//     featured: null,
-//     nameProduct: null,
-//     priceProduct: null,
-//     companyProduct: null,
-// };
   Home(objFilter)
   checkLocalStorage();
   quantityBasketProduct(basketProductArray)
  
-//   $app.removeChild($divMainCatalogBlock)
 }
 export default App;

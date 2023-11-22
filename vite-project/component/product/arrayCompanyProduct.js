@@ -1,5 +1,3 @@
-// import {arrayaProductInStorega} from "./parserProduct.js"
-
 function createArrayCompanyProduct(arrayProduct) {
     let arrayCompanyProduct = ["All"]
     arrayProduct.forEach((element) => {
@@ -16,7 +14,6 @@ function createArrayCompanyProduct(arrayProduct) {
         arrayCompanyProduct.push(element.fields.company);
       }
     });
-    // console.log(arrayCompanyProduct)
     return arrayCompanyProduct
   }
   export default createArrayCompanyProduct;

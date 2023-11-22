@@ -1,4 +1,3 @@
-// import { basketProductArray } from './checkCard';
 import {upDatePlus, upDateMinus, upDateRemove} from "../addEventListener.js"
 
 function cardProduct(elemHtml, basketProductArray, index) {

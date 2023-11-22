@@ -5,9 +5,6 @@ import { basketProductArray } from './checkCard';
 import {cardSummAllProduct} from "./cardSumAllProduct"
 
 function card() {
-//   const $busketOpen = document.createElement('div');
-//   $busketOpen.id = 'basket_open';
-//   elemHtml.append($busketOpen);
   const $busketOpen = document.getElementById("basket_open")
 
 

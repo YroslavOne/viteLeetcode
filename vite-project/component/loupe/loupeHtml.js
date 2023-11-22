@@ -38,7 +38,6 @@ const $h3PriseLoupe = document.createElement('h3');
 $h3PriseLoupe.className = "prise_loupe";
 const $divColorFlex = document.createElement('div');
     $divColorFlex.className = "colorFlex";
-    // $divColorFlex.style.backgroundColor = element;
     $divThisDiv.appendChild($divColorFlex);
 $h3PriseLoupe.textContent = getPriseWhitDot(filterArrayForLoupe[0].fields.price);
 $divThisDiv.appendChild($h3PriseLoupe);
