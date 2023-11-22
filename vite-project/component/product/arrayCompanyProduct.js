@@ -16,7 +16,7 @@ function createArrayCompanyProduct(arrayProduct) {
         arrayCompanyProduct.push(element.fields.company);
       }
     });
-    console.log(arrayCompanyProduct)
+    // console.log(arrayCompanyProduct)
     return arrayCompanyProduct
   }
   export default createArrayCompanyProduct;

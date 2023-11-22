@@ -18,4 +18,4 @@ const root = new Render({
 
 root.render();
 
-setupCounter(document.getElementById('app'));
+// setupCounter(document.getElementById('app'));

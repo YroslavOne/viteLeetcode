@@ -26,6 +26,7 @@ function menujs(elementHtml, data) {
   $menuBlock.append($divLogoMenu);
   const $imgLogMenu = document.createElement("img");
   $imgLogMenu.src = LogoMenu;
+  $imgLogMenu.id = "logoMenu";
   $divLogoMenu.append($imgLogMenu);
   const $divBasketWidth = document.createElement("div");
   $divBasketWidth.className = "width_30 basket";
@@ -37,7 +38,8 @@ function menujs(elementHtml, data) {
   $divBasketWidth.append($buttonBusket);
   const $iBicart = document.createElement("i");
   $iBicart.className = "bi bi-cart4";
-  $iBicart.style.color = "black";
+  $iBicart.id = "biCard";
+  $iBicart.style.color = "#fff";
   $buttonBusket.append($iBicart);
   const $spanBasketSumItems = document.createElement("span");
   $spanBasketSumItems.className = "basket_summ_items"

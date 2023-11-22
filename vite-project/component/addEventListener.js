@@ -8,7 +8,7 @@ import { objFilter } from "./data.js";
 import Products from "./products.js"
 import { chekingis } from "./product/product.js";
 import cleaneProducts from './product/cleaneProducts.js'
-
+import backgroundForPage from './menu/backgroundForPage.js'
 
 
 export function cheking(idelement){
@@ -79,6 +79,9 @@ export function loupeClick(elementHtml, idLoupe){
         loupe(idLoupe)
     })
 }
+
+
+
 export function clicklinkMenu(elementHtml, nameFunction){
     elementHtml.addEventListener('click', () => {
         if(nameFunction ==="Home"){
@@ -90,6 +93,10 @@ export function clicklinkMenu(elementHtml, nameFunction){
         } if(nameFunction ==="Product"){
             cleanPage()
             Products(objFilter)
+            let backgroundLinkMune = "black_li_menu";
+            let Backgroundcard = "#222";
+            let logo = "img/logo/logo-black.svg";
+            backgroundForPage(backgroundLinkMune, Backgroundcard, logo)
         }
     });
 }
@@ -97,7 +104,8 @@ export function clicklinkMenu(elementHtml, nameFunction){
 export function tapCompany(elementHtml, herId){
     elementHtml.addEventListener('click', () => {
         objFilter.companyProduct = herId
-        console.log(objFilter)
+        cleaneProducts()
+        chekingis(objFilter)
     });
 }
 

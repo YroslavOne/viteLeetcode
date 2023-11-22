@@ -47,7 +47,7 @@ function prodactHtml(elemHtml, image, id, name, price){
     busketAddAndOpen($EventBasketAddAndOpen, id)
     const $idLoupe = document.querySelector(`.loupeOnClick_${id}`);
     loupeClick($idLoupe, id);
-    console.log("chek")
+    // console.log("chek")
     
     // const $buttonLoupeid = document.
 }

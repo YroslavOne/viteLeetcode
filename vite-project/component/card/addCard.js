@@ -9,19 +9,19 @@ export function quantityProduct(idElem) {
         element.quantity = element.quantity + 1;
         localStorage.basketProduct = JSON.stringify(basketProductArray);
         ifPruductTrue = 1;
-        console.log(basketProductArray);
+        // console.log(basketProductArray);
         quantityBasketProduct(basketProductArray);
       }
     });
-    console.log(ifPruductTrue);
+    // console.log(ifPruductTrue);
 
     if (ifPruductTrue === 0) {
-      console.log('addProduct');
+      // console.log('addProduct');
       addProductId(idElem);
       ifPruductTrue = 0;
     }
   } else {
-    console.log('addProduct2');
+    // console.log('addProduct2');
 
     addProductId(idElem);
   }
@@ -50,7 +50,7 @@ export function quantityBasketProduct(basketProductArray) {
   basketProductArray.forEach((element) => {
     sumProduct = sumProduct + element.quantity;
   });
-  console.log(sumProduct);
+  // console.log(sumProduct);
   const $BasketSummItems = document.getElementById('basket_summ_items');
   $BasketSummItems.textContent = sumProduct;
 }

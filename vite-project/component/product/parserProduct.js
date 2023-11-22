@@ -16,7 +16,7 @@ export function getProducts(objFilter) {
     arrayaProductInStorega = JSON.parse(localStorage.storage)
     arrayaProductInStorega.forEach((element) => {
         pageCheckForHome(element, objFilter);
-        console.log(objFilter)
+        // console.log(objFilter)
       });
   }
 

@@ -8,7 +8,7 @@ function menuLink(elemHtml, dataMenuLink) {
     const $elemLi = document.createElement('li');
     const $elemA = document.createElement('a');
     $elemA.id = `${element.title}`;
-    $elemA.className = 'blackColorClass';
+    // $elemA.className = '';
     const $contentElemA = document.createTextNode(element.title);
     $elemA.appendChild($contentElemA);
     $elemLi.append($elemA);
