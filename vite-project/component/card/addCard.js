@@ -2,22 +2,21 @@ import { basketProductArray } from './checkCard';
 import getPriseWhitDot from '../product/priceWithDot.js';
 
 export function quantityProduct(idElem) {
-  let ifPruductTrue = 0;
+  let ifProductTrue = 0;
   if (basketProductArray.length > 0) {
     basketProductArray.forEach((element) => {
       if (element.id === idElem) {
         element.quantity = element.quantity + 1;
         localStorage.basketProduct = JSON.stringify(basketProductArray);
-        ifPruductTrue = 1;
+        ifProductTrue = 1;
         quantityBasketProduct(basketProductArray);
       }
     });
-    if (ifPruductTrue === 0) {
+    if (ifProductTrue === 0) {
       addProductId(idElem);
-      ifPruductTrue = 0;
+      ifProductTrue = 0;
     }
   } else {
-
     addProductId(idElem);
   }
 }
@@ -45,6 +44,6 @@ export function quantityBasketProduct(basketProductArray) {
   basketProductArray.forEach((element) => {
     sumProduct = sumProduct + element.quantity;
   });
-  const $BasketSummItems = document.getElementById('basket_summ_items');
-  $BasketSummItems.textContent = sumProduct;
+  const $BasketSumItems = document.getElementById('basket_summ_items');
+  $BasketSumItems.textContent = sumProduct;
 }

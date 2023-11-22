@@ -1,56 +1,50 @@
-// import { variableCard } from '../../variabel.js';
-// import { setupCounter } from '../../counter.js';
-// import card from '../card/card.js';
 import menuLink from './menuLink.js';
-// import LogoMenu from "https://vanilla-js-store.netlify.app/images/logo-white.svg"
-import {cardOpen} from "../addEventListener.js"
+import { cardOpen } from '../addEventListener.js';
 
-
-function menujs(elementHtml, data) {
+function menu(elementHtml, data) {
   const $menu = document.createElement('div');
   $menu.className = 'menu_display_flex';
   $menu.id = 'menu';
   elementHtml.appendChild($menu);
   const $menuBlock = document.createElement('div');
-  $menuBlock.className = "menu_block";
+  $menuBlock.className = 'menu_block';
   $menu.append($menuBlock);
   const $menuWidth = document.createElement('div');
-  $menuWidth.className = "menu width_30"
+  $menuWidth.className = 'menu width_30';
   $menuBlock.append($menuWidth);
   const $menuUl = document.createElement('ul');
   $menuWidth.append($menuUl);
-  menuLink($menuUl, data)
-  const $divLogoMenu = document.createElement("div")
-  $divLogoMenu.className = "width_30 logo_menu";
+  menuLink($menuUl, data);
+  const $divLogoMenu = document.createElement('div');
+  $divLogoMenu.className = 'width_30 logo_menu';
   $menuBlock.append($divLogoMenu);
-  const $imgLogMenu = document.createElement("img");
-  $imgLogMenu.src = "https://vanilla-js-store.netlify.app/images/logo-white.svg";
-  $imgLogMenu.id = "logoMenu";
+  const $imgLogMenu = document.createElement('img');
+  $imgLogMenu.src =
+    'https://vanilla-js-store.netlify.app/images/logo-white.svg';
+  $imgLogMenu.id = 'logoMenu';
   $divLogoMenu.append($imgLogMenu);
-  const $divBasketWidth = document.createElement("div");
-  $divBasketWidth.className = "width_30 basket";
+  const $divBasketWidth = document.createElement('div');
+  $divBasketWidth.className = 'width_30 basket';
   $menuBlock.append($divBasketWidth);
-  $divBasketWidth.className = "width_30 basket";
-  const $buttonBusket = document.createElement("button");
-  $buttonBusket.className = "basket_fixed";
-  $buttonBusket.id = "elemButtinCard";
-  $divBasketWidth.append($buttonBusket);
-  const $iBicart = document.createElement("i");
-  $iBicart.className = "bi bi-cart4";
-  $iBicart.id = "biCard";
-  $iBicart.style.color = "#fff";
-  $buttonBusket.append($iBicart);
-  const $spanBasketSumItems = document.createElement("span");
-  $spanBasketSumItems.className = "basket_summ_items"
+  $divBasketWidth.className = 'width_30 basket';
+  const $buttonBasket = document.createElement('button');
+  $buttonBasket.className = 'basket_fixed';
+  $buttonBasket.id = 'elemButtonCard';
+  $divBasketWidth.append($buttonBasket);
+  const $iBicard = document.createElement('i');
+  $iBicard.className = 'bi bi-cart4';
+  $iBicard.id = 'biCard';
+  $iBicard.style.color = '#fff';
+  $buttonBasket.append($iBicard);
+  const $spanBasketSumItems = document.createElement('span');
+  $spanBasketSumItems.className = 'basket_summ_items';
   $divBasketWidth.append($spanBasketSumItems);
-  const $divBasketItemsSumm = document.createElement("div");
-  $divBasketItemsSumm.id = "basket_summ_items";
-  const $divBasketItemsSummText = document.createTextNode("0")
-  $divBasketItemsSumm.appendChild($divBasketItemsSummText);
-  $spanBasketSumItems.append($divBasketItemsSumm);
-  const elemButtinCard = document.getElementById("elemButtinCard")
-  cardOpen(elemButtinCard)
-
-  // elemButtinCard.addEventListener("click", card(elementHtml))
+  const $divBasketItemsSum = document.createElement('div');
+  $divBasketItemsSum.id = 'basket_summ_items';
+  const $divBasketItemsSumText = document.createTextNode('0');
+  $divBasketItemsSum.appendChild($divBasketItemsSumText);
+  $spanBasketSumItems.append($divBasketItemsSum);
+  const elemButtonCard = document.getElementById('elemButtonCard');
+  cardOpen(elemButtonCard);
 }
-export default menujs;
+export default menu;

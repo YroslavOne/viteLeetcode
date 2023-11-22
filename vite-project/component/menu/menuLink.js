@@ -1,4 +1,4 @@
-import {clicklinkMenu} from '../addEventListener.js'
+import { clickLinkMenu } from '../addEventListener.js';
 
 function menuLink(elemHtml, dataMenuLink) {
   dataMenuLink.forEach((element) => {
@@ -10,9 +10,8 @@ function menuLink(elemHtml, dataMenuLink) {
     $elemLi.append($elemA);
     elemHtml.append($elemLi);
 
-    const $idElemTitle = document.getElementById(element.title)
-    clicklinkMenu($idElemTitle, element.title)
-
+    const $idElemTitle = document.getElementById(element.title);
+    clickLinkMenu($idElemTitle, element.title);
   });
 }
 

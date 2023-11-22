@@ -1,4 +1,4 @@
-import {upDatePlus, upDateMinus, upDateRemove} from "../addEventListener.js"
+import { upDatePlus, upDateMinus, upDateRemove } from '../addEventListener.js';
 
 function cardProduct(elemHtml, basketProductArray, index) {
   const $divDisplayFlexBasketProduct = document.createElement('div');
@@ -10,7 +10,6 @@ function cardProduct(elemHtml, basketProductArray, index) {
   $divImgElemBasketProduct.className = 'img_elem_basket_product';
   $divDisplayFlexBasketProduct.appendChild($divImgElemBasketProduct);
   const $imgElemBasketProduct = document.createElement('img');
-  console.log(basketProductArray)
   $imgElemBasketProduct.src = basketProductArray.img;
   $divImgElemBasketProduct.appendChild($imgElemBasketProduct);
   const $divTextElemBasketProduct = document.createElement('div');
@@ -56,13 +55,17 @@ function cardProduct(elemHtml, basketProductArray, index) {
   $iProductMinus.id = 'productMinus';
   $buttonQuantityMinus.appendChild($iProductMinus);
 
-
-  const $productPlus = document.querySelector(`.productPlus${basketProductArray.id}`)
-  const $productMinus = document.querySelector(`.productMinus${basketProductArray.id}`)
-  const $productRemove = document.querySelector(`.removeItemBasket${basketProductArray.id}`)
-  upDatePlus($productPlus, index)
-  upDateMinus($productMinus, index)
-  upDateRemove($productRemove, index)
-
+  const $productPlus = document.querySelector(
+    `.productPlus${basketProductArray.id}`
+  );
+  const $productMinus = document.querySelector(
+    `.productMinus${basketProductArray.id}`
+  );
+  const $productRemove = document.querySelector(
+    `.removeItemBasket${basketProductArray.id}`
+  );
+  upDatePlus($productPlus, index);
+  upDateMinus($productMinus, index);
+  upDateRemove($productRemove, index);
 }
 export default cardProduct;
