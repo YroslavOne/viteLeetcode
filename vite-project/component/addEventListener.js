@@ -9,6 +9,7 @@ import Products from "./products.js"
 import { chekingis } from "./product/product.js";
 import cleaneProducts from './product/cleaneProducts.js'
 import backgroundForPage from './menu/backgroundForPage.js'
+import About from "./about.js";
 
 
 export function cheking(idelement){
@@ -74,7 +75,6 @@ export function upDateRemove(elementHtml, index){
 
 export function loupeClick(elementHtml, idLoupe){
     elementHtml.addEventListener('click',()=>{
-        console.log(idLoupe);
         localStorage.idLoupe = idLoupe;
         loupe(idLoupe)
     })
@@ -87,15 +87,27 @@ export function clicklinkMenu(elementHtml, nameFunction){
         if(nameFunction ==="Home"){
             cleanPage()
             Home(objFilter)
+            let backgroundLinkMune = "";
+            let Backgroundcard = "#fff";
+            let logo = "https://vanilla-js-store.netlify.app/images/logo-white.svg";
+            backgroundForPage(backgroundLinkMune, Backgroundcard, logo)
+        }
 
-        }if(nameFunction ==="About"){
-            // About()
+         if(nameFunction ==="About"){
+            cleanPage()
+            // Products(objFilter)
+            About()
+            let backgroundLinkMune = "black_li_menu";
+            let Backgroundcard = "#222";
+            let logo = "https://vanilla-js-store.netlify.app/images/logo-black.svg";
+            backgroundForPage(backgroundLinkMune, Backgroundcard, logo)
+        
         } if(nameFunction ==="Product"){
             cleanPage()
             Products(objFilter)
             let backgroundLinkMune = "black_li_menu";
             let Backgroundcard = "#222";
-            let logo = "img/logo/logo-black.svg";
+            let logo = "https://vanilla-js-store.netlify.app/images/logo-black.svg";
             backgroundForPage(backgroundLinkMune, Backgroundcard, logo)
         }
     });

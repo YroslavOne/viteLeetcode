@@ -2,7 +2,7 @@
 // import { setupCounter } from '../../counter.js';
 // import card from '../card/card.js';
 import menuLink from './menuLink.js';
-import LogoMenu from "../../img/logo/logo-black.svg"
+// import LogoMenu from "https://vanilla-js-store.netlify.app/images/logo-white.svg"
 import {cardOpen} from "../addEventListener.js"
 // import { basketProductArray } from '../card/checkCard.js';
 
@@ -25,7 +25,7 @@ function menujs(elementHtml, data) {
   $divLogoMenu.className = "width_30 logo_menu";
   $menuBlock.append($divLogoMenu);
   const $imgLogMenu = document.createElement("img");
-  $imgLogMenu.src = LogoMenu;
+  $imgLogMenu.src = "https://vanilla-js-store.netlify.app/images/logo-white.svg";
   $imgLogMenu.id = "logoMenu";
   $divLogoMenu.append($imgLogMenu);
   const $divBasketWidth = document.createElement("div");

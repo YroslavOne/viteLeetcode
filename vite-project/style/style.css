@@ -686,3 +686,33 @@ a {
     color: #222;
     background: hsl(21, 65%, 59%);
 }
+
+.divAbout{
+	padding: 5rem 0;
+	width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.aboutTitle{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	display: block;
+}
+.h2AboutHistori{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+	line-height: 1;
+	font-size: 2.5rem;
+}
+.about-text{
+	line-height: 2;
+    max-width: 45em;
+    margin: 0 auto;
+    margin-top: 2rem;
+	color: hsl(210, 22%, 49%);
+
+}

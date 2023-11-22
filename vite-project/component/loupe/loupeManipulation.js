@@ -7,7 +7,6 @@ const $htmlGenerateCardItem = document.getElementById('cardItem');
 
 export function filterById(elementHtml, idLoupe) {
   let filterProduct = arrayaProductInStorega.filter((item) => item.id === idLoupe);
-  console.log(filterProduct);
   loupeHtml(elementHtml, filterProduct);
 }
 

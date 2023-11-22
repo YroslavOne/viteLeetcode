@@ -85,7 +85,6 @@ function ProductMainHtml(elementHtml){
     $inputvaluePriceInput.type = "range"
     let arrayaProductInStor = JSON.parse(localStorage.storage)
     let maxValuePrices = maxValuePrice(arrayaProductInStor)
-    console.log(maxValuePrices)
     $inputvaluePriceInput.max = maxValuePrices
     $inputvaluePriceInput.value = maxValuePrices
     $inputvaluePriceInput.step = "1"
