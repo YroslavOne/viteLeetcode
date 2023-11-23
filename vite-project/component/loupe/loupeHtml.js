@@ -1,4 +1,5 @@
 import getPriseWhitDot from '../product/priceWithDot.js';
+import {busketAddAndOpen} from "../addEventListener.js"
 
 function loupeHtml(elementHtml, filterArrayForLoupe) {
   const $divBreadCrumbs = document.createElement('div');
@@ -56,7 +57,10 @@ function loupeHtml(elementHtml, filterArrayForLoupe) {
   const $buttonTapLoupe = document.createElement('button');
   $buttonTapLoupe.className = 'basket_tap_loupe';
   $buttonTapLoupe.textContent = 'add to cart';
-  $buttonTapLoupe.id = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+  $buttonTapLoupe.id = 'basket_tap_loupe';
   $divThisDiv.appendChild($buttonTapLoupe);
+
+  const $idButtonTapLoupe = document.getElementById("basket_tap_loupe")
+  busketAddAndOpen($idButtonTapLoupe, filterArrayForLoupe[0].id);
 }
 export default loupeHtml;

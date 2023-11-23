@@ -1,6 +1,7 @@
 import { chekingis } from './product/product.js';
 import mainBlock from './mainBlock/mainBlock.js';
 import { checkLocalStorage } from './card/checkCard.js';
+import {openProduct} from "./addEventListener.js"
 
 function Home(objFilter) {
   const $app = document.getElementById('app');
@@ -26,8 +27,12 @@ function Home(objFilter) {
   $divMainCatalogBlock.append($aLinkProduct);
   const $buttonCatalogBlock = document.createElement('button');
   $buttonCatalogBlock.className = 'catalog_block_button';
+  $buttonCatalogBlock.id = 'catalog_block_button';
   $buttonCatalogBlock.textContent = 'all products';
   $aLinkProduct.append($buttonCatalogBlock);
   checkLocalStorage();
+
+  const $idButtonCatalogBlock = document.getElementById("catalog_block_button")
+  openProduct($idButtonCatalogBlock)
 }
 export default Home;

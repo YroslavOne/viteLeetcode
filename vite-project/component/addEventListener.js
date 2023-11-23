@@ -136,3 +136,13 @@ export function allClick(basketProductArray) {
     console.log('chek');
   });
 }
+export function openProduct(elementHtml){
+  elementHtml.addEventListener('click', () => {
+    cleanPage();
+      Products(objFilter);
+      let backgroundLinkMune = 'black_li_menu';
+      let Backgroundcard = '#222';
+      let logo = 'https://vanilla-js-store.netlify.app/images/logo-black.svg';
+      backgroundForPage(backgroundLinkMune, Backgroundcard, logo);
+  })
+}

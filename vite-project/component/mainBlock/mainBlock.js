@@ -1,3 +1,5 @@
+import {openProduct} from "../addEventListener.js"
+
 function mainBlock(elemHtml) {
   const $mainBlock = document.createElement('div');
   $mainBlock.className = 'main_block';
@@ -24,8 +26,7 @@ function mainBlock(elemHtml) {
   $textMainBlock.append($h2TextMainBlock);
   $textMainBlock.append($mainBlockButton);
 
-  document
-    .getElementById('main_block_button')
-    .addEventListener('click', () => console.log('hi man'));
+  const $idMainBlockButton = document.getElementById('main_block_button')
+  openProduct($idMainBlockButton)
 }
 export default mainBlock;
