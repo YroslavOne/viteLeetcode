@@ -9,34 +9,36 @@ import {
 import { objFilter } from '../data.js';
 import maxValuePrice from './maxPrice.js';
 import cleaneProducts from './cleaneProducts.js';
+import {tagForPage} from "../assemblyHtml/assemblyHtml.js"
 
 function ProductMainHtml(elementHtml) {
-  const $divBreadCrumbs = document.createElement('div');
-  $divBreadCrumbs.className = 'breadCrumbs';
-  elementHtml.append($divBreadCrumbs);
-  const $pBreadCrumbs = document.createElement('p');
-  $pBreadCrumbs.id = 'breadCrumbs';
-  $pBreadCrumbs.textContent = 'Home / Products';
-  $divBreadCrumbs.append($pBreadCrumbs);
-  const $divBlockProductsFlex = document.createElement('div');
-  $divBlockProductsFlex.className = 'block_products_flex';
-  elementHtml.append($divBlockProductsFlex);
-  const $divBlockProducts = document.createElement('div');
-  $divBlockProducts.className = 'block_products';
-  $divBlockProductsFlex.append($divBlockProducts);
-  const $divFilterSidbar = document.createElement('div');
-  $divFilterSidbar.className = 'filter_sidbar';
-  $divBlockProducts.append($divFilterSidbar);
-  const $divSidebar = document.createElement('div');
-  $divSidebar.className = 'sidebar';
-  $divFilterSidbar.append($divSidebar);
-  const $inputTextInput = document.createElement('input');
-  $inputTextInput.id = 'text_input';
-  $inputTextInput.type = 'text';
-  $inputTextInput.placeholder = 'search...';
-  $divSidebar.append($inputTextInput);
+  // tagForPage.div("","","","")
+  const $divBreadCrumbs = tagForPage.div("breadCrumbs","breadCrumbsdiv","",elementHtml)
+  const $pBreadCrumbs = tagForPage.p("", "breadCrumbs", "Home / Products", $divBreadCrumbs)
+  const $divBlockProductsFlex = tagForPage.div("block_products_flex","block_products_flex","",elementHtml)
+  const $divBlockProducts = tagForPage.div("block_products","block_productstag_div","",$divBlockProductsFlex)
+  const $divFilterSidbar =   tagForPage.div("filter_sidbar","filter_sidbardiv","",$divBlockProducts)
+  const $divSidebar = tagForPage.div("sidebar","sidebar","",$divFilterSidbar)
+  const $inputTextInput = tagForPage.input("text_input","text_input_produtcs","search...",$divSidebar, "text")
+
+  // const $divBlockProducts = document.createElement('div');
+  // $divBlockProducts.className = 'block_products';
+  // $divBlockProductsFlex.append($divBlockProducts);
+  // const $divFilterSidbar = document.createElement('div');
+  // $divFilterSidbar.className = 'filter_sidbar';
+  // $divBlockProducts.append($divFilterSidbar);
+  // const $divSidebar = document.createElement('div');
+  // $divSidebar.className = 'sidebar';
+  // $divFilterSidbar.append($divSidebar);
+  // const $inputTextInput = document.createElement('input');
+  // $inputTextInput.id = 'text_input';
+  // $inputTextInput.type = 'text';
+  // $inputTextInput.placeholder = 'search...';
+  // $divSidebar.append($inputTextInput);
   text_input.oninput = function () {
-    tapNameProduct(text_input.value);
+    console.log(text_input.value);
+
+    // tapNameProduct(text_input.value);
     cleaneProducts();
   };
 

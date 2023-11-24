@@ -5,7 +5,6 @@ import { cardSumAllProduct } from './cardSumAllProduct';
 
 function card() {
   const $basketOpen = document.getElementById('basket_open');
-
   const $blockBasket = document.createElement('div');
   $blockBasket.className = 'block_basket';
   $blockBasket.id = 'block_basket';
